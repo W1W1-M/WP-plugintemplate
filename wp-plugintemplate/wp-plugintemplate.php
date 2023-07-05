@@ -15,7 +15,7 @@
  * Description:          Plugin description
  * Version:              1.0.0
  * Requires at least:    6.0.5
- * Requires PHP:         7.4.33
+ * Requires PHP:         8.2.4
  * Author:               William Mead - Manche Numérique
  * Author URI:           https://www.manchenumerique.fr
  * License:              GNU GPLv3
@@ -36,8 +36,10 @@ wp_plugintemplate_setup();
 function wp_plugintemplate_setup(): void {
     try {
         wp_plugintemplate_require_once();
-        $wp_plugintemplate_setup = new WP_tarteaucitron_Setup();
+        $wp_plugintemplate_setup = new WP_plugintemplate_Setup();
         $wp_plugintemplate_setup->init();
+        $wp_plugintemplate_options = new WP_plugintemplate_Options();
+        $wp_plugintemplate_options->init();
     } catch ( Exception $exception ) {
         exit( $exception->getMessage() );
     }
