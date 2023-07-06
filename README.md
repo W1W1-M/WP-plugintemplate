@@ -3,7 +3,7 @@
 ## Features
 A WordPress plugin.
 
-![WP-plugintemplate screenshot]("WP-plugintemplate screenshot")
+![WP-plugintemplate screenshot](screenshot.png "WP-plugintemplate screenshot")
 
 ## Prerequisites
 - PHP 8.0
