@@ -133,8 +133,8 @@ class WP_plugintemplate_Options {
             __( 'Dummy setting', 'wp-plugintemplate' ), array( &$this,
             'use_plugintemplate_dummy_field_callback'
         ),
-            'wp-tarteaucitron',
-            'wp_tarteaucitron_settings_section'
+            'wp-plugintemplate',
+            'wp_plugintemplate_settings_section'
         );
     }
 
