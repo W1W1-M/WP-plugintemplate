@@ -20,8 +20,8 @@ class WP_plugintemplate_Setup {
     public function init(): void {
         try {
             $this->wordpress_absolute_path_available();
-            register_activation_hook( WP_TARTEAUCITRON_PLUGIN_FILE_PATH, array( $this, 'plugin_activate' ) );
-            register_deactivation_hook( WP_TARTEAUCITRON_PLUGIN_FILE_PATH, array( $this, 'plugin_deactivate' ) );
+            register_activation_hook( WP_PLUGINTEMPLATE_PLUGIN_FILE_PATH, array( $this, 'plugin_activate' ) );
+            register_deactivation_hook( WP_PLUGINTEMPLATE_PLUGIN_FILE_PATH, array( $this, 'plugin_deactivate' ) );
         } catch ( Exception $exception ) {
             exit( $exception->getMessage() );
         }
