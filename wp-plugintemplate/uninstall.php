@@ -1,13 +1,13 @@
 <?php /** @noinspection PhpRedundantClosingTagInspection */
 
-wp_tarteaucitron_uninstall();
+wp_plugintemplate_uninstall();
 
 /**
- * @since 1.0.0
+ * @since 1.0.1
  *
  * @return void
  */
-function wp_tarteaucitron_uninstall(): void {
+function wp_plugintemplate_uninstall(): void {
     try {
         wordpress_plugin_uninstall_called();
         delete_options();
