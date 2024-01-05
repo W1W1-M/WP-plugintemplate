@@ -4,7 +4,7 @@
  * WP-plugintemplate
  *
  * @package         WP-plugintemplate
- * @version         1.0.0
+ * @version         1.0.1
  * @author          William Mead - Manche Numérique
  * @copyright       2023 Manche Numérique
  * @license         GPL-3.0-or-later
@@ -13,7 +13,7 @@
  * Plugin Name:          WP-plugintemplate
  * Plugin URI:           https://git.manche.io/wordpress/wpplugintemplate
  * Description:          Plugin description
- * Version:              1.0.0
+ * Version:              1.0.1
  * Requires at least:    6.0.5
  * Requires PHP:         8.2.4
  * Author:               William Mead - Manche Numérique
