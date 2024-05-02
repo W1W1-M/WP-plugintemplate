@@ -3,7 +3,7 @@
 /**
  * @since 1.0.0
  */
-class WP_plugintemplate_Options {
+class wp_offres_emploi_intranet_Options {
 
     /**
      * @since 1.0.0
@@ -20,7 +20,7 @@ class WP_plugintemplate_Options {
     public function init(): void {
         add_action( 'admin_menu', array($this, 'setup_submenu_with_page' ) );
         add_action( 'admin_init', array(&$this, 'setup_settings' ) );
-        add_filter( 'plugin_action_links_' . plugin_basename(WP_PLUGINTEMPLATE_PLUGIN_FILE_PATH), array( $this, 'plugin_settings_link') );
+        add_filter( 'plugin_action_links_' . plugin_basename(WP_OFFRES_EMPLOI_INTRANET_FILE_PATH), array( $this, 'plugin_settings_link') );
     }
 
     /**
@@ -31,10 +31,10 @@ class WP_plugintemplate_Options {
     public function setup_submenu_with_page(): void {
         add_submenu_page(
             'options-general.php',
-            'WP-plugintemplate',
-            'WP-plugintemplate',
+            'wp-offres-emploi-intranet',
+            'wp-offres-emploi-intranet',
             'manage_options',
-            'wp-plugintemplate',
+            'wp-offres-emploi-intranet',
             array( $this, 'setup_page' )
         );
     }
@@ -75,8 +75,8 @@ class WP_plugintemplate_Options {
      */
     protected function setup_settings_form(): void {
         echo '<form action="options.php" method="post">';
-        settings_fields( 'wp_plugintemplate_options' );
-        do_settings_sections( 'wp-plugintemplate' );
+        settings_fields('wp_offres_emploi_intranet_Options');
+        do_settings_sections( 'wp-offres-emploi-intranet' );
         submit_button();
         echo '</form>';
     }
@@ -88,7 +88,7 @@ class WP_plugintemplate_Options {
      */
     public function setup_settings(): void {
         $this->setup_settings_section();
-        $this->setup_plugintemplate_dummy_setting();
+        $this->setup_wp_offres_emploi_intranet_dummy_setting();
     }
 
     /**
@@ -98,9 +98,9 @@ class WP_plugintemplate_Options {
      */
     protected function setup_settings_section(): void {
         add_settings_section(
-            'wp_plugintemplate_settings_section',
-            __( 'Settings', 'wp-plugintemplate' ), array( &$this, 'settings_section_callback' ),
-            'wp-plugintemplate'
+            'wp_offres_emploi_intranet_settings_section',
+            __( 'Settings', 'wp-offres-emploi-intranet' ), array( &$this, 'settings_section_callback' ),
+            'wp-offres-emploi-intranet'
         );
     }
 
@@ -118,23 +118,23 @@ class WP_plugintemplate_Options {
      *
      * @return void
      */
-    protected function setup_plugintemplate_dummy_setting(): void {
+    protected function setup_wp_offres_emploi_intranet_dummy_setting(): void {
         $form_id_setting_args = array(
-            'sanitize_callback' => array( &$this, 'sanitize_plugintemplate_dummy_setting_input'),
+            'sanitize_callback' => array( &$this, 'sanitize_wp_offres_emploi_intranet_dummy_setting_input'),
             'default' => 'false'
         );
         register_setting(
-            'wp_plugintemplate_options',
-            'wp_plugintemplate_dummy',
+            'wp_offres_emploi_intranet_Options',
+            'wp_offres_emploi_intranet_dummy',
             $form_id_setting_args
         );
         add_settings_field(
-            'wp_plugintemplate_dummy_field',
-            __( 'Dummy setting', 'wp-plugintemplate' ), array( &$this,
-            'use_plugintemplate_dummy_field_callback'
+            'wp_offres_emploi_intranet_dummy_field',
+            __( 'Dummy setting', 'wp-offres-emploi-intranet' ), array( &$this,
+            'use_wp_offres_emploi_intranet_dummy_field_callback'
         ),
-            'wp-plugintemplate',
-            'wp_plugintemplate_settings_section'
+            'wp-offres-emploi-intranet',
+            'wp_offres_emploi_intranet_settings_section'
         );
     }
 
@@ -145,7 +145,7 @@ class WP_plugintemplate_Options {
      *
      * @return bool
      */
-    public function sanitize_plugintemplate_dummy_setting_input($input ): bool {
+    public function sanitize_wp_offres_emploi_intranet_dummy_setting_input($input ): bool {
         if( $input == 'on' ) {
             return true;
         } else {
@@ -158,11 +158,11 @@ class WP_plugintemplate_Options {
      *
      * @return void
      */
-    public function use_plugintemplate_dummy_field_callback(): void {
+    public function use_wp_offres_emploi_intranet_dummy_field_callback(): void {
         $html = '<p>';
-        $html .= '<label for="wp_plugintemplate_dummy" hidden>wp_plugintemplate_dummy</label>';
-        $html .= '<input type="checkbox" id="wp_plugintemplate_dummy" name="wp_plugintemplate_dummy"';
-        if( $this->get_option_wp_plugintemplate_dummy() ) {
+        $html .= '<label for="wp_offres_emploi_intranet_dummy" hidden>wp_offres_emploi_intranet_dummy</label>';
+        $html .= '<input type="checkbox" id="wp_offres_emploi_intranet_dummy" name="wp_offres_emploi_intranet_dummy"';
+        if( $this->get_option_wp_offres_emploi_intranet_dummy() ) {
             $html .= 'value="on" checked';
         }
         $html .= '/></p>';
@@ -174,8 +174,8 @@ class WP_plugintemplate_Options {
      *
      * @return bool
      */
-    protected function get_option_wp_plugintemplate_dummy(): bool {
-        return get_option( 'wp_plugintemplate_dummy' );
+    protected function get_option_wp_offres_emploi_intranet_dummy(): bool {
+        return get_option( 'wp_offres_emploi_intranet_dummy' );
     }
 
     /**
@@ -186,7 +186,7 @@ class WP_plugintemplate_Options {
      * @return mixed
      */
     public function plugin_settings_link( $links ): mixed {
-        $links[] = '<a href="' . admin_url( 'options-general.php?page=wp-plugintemplate' ) . '">' . __('Settings') . '</a>';
+        $links[] = '<a href="' . admin_url( 'options-general.php?page=wp-offres-emploi-intranet' ) . '">' . __('Settings') . '</a>';
         return $links;
     }
 }

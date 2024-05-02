@@ -20,26 +20,26 @@
  * Author URI:           https://www.manchenumerique.fr
  * License:              GNU GPLv3
  * License URI:          https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain:          wp-plugintemplate
+ * Text Domain:          wp-offres-emploi-intranet
  * Domain Path:          /lang
  */
 
-const WP_PLUGINTEMPLATE_PLUGIN_FILE_PATH = __FILE__;
+const WP_OFFRES_EMPLOI_INTRANET_PLUGIN_FILE_PATH = __FILE__;
 
-wp_plugintemplate_setup();
+wp_offres_emploi_intranet_setup();
 
 /**
  * @since 1.0.0
  *
  * @return void
  */
-function wp_plugintemplate_setup(): void {
+function wp_offres_emploi_intranet_setup(): void {
     try {
-        wp_plugintemplate_require_once();
-        $wp_plugintemplate_setup = new WP_plugintemplate_Setup();
-        $wp_plugintemplate_setup->init();
-        $wp_plugintemplate_options = new WP_plugintemplate_Options();
-        $wp_plugintemplate_options->init();
+        wp_offres_emploi_intranet_require_once();
+        $wp_offres_emploi_intranet_setup = new wp_offres_emploi_intranet_Setup();
+        $wp_offres_emploi_intranet_setup->init();
+        $wp_offres_emploi_intranet_options = new wp_offres_emploi_intranet_Options();
+        $wp_offres_emploi_intranet_options->init();
     } catch ( Exception $exception ) {
         exit( $exception->getMessage() );
     }
@@ -50,10 +50,10 @@ function wp_plugintemplate_setup(): void {
  *
  * @return void
  */
-function wp_plugintemplate_require_once(): void {
-    $plugin_dir_path = plugin_dir_path( WP_PLUGINTEMPLATE_PLUGIN_FILE_PATH );
-    require_once $plugin_dir_path . 'inc/WP_plugintemplate_Setup.php';
-    require_once $plugin_dir_path . 'admin/WP_plugintemplate_Options.php';
+function wp_offres_emploi_intranet_require_once(): void {
+    $plugin_dir_path = plugin_dir_path( WP_OFFRES_EMPLOI_INTRANET_PLUGIN_FILE_PATH );
+    require_once $plugin_dir_path . 'inc/wp_offres_emploi_intranet_Setup.php';
+    require_once $plugin_dir_path . 'admin/wp_offres_emploi_intranet_Options.php';
 }
 
 ?>

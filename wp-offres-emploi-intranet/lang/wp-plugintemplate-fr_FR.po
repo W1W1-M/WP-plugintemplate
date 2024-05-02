@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wp-plugintemplate\n"
+"Project-Id-Version: wp-offres-emploi-intranet\n"
 "POT-Creation-Date: 2023-07-05 14:21+0200\n"
 "PO-Revision-Date: 2023-07-05 14:23+0200\n"
 "Last-Translator: \n"

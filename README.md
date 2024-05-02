@@ -1,16 +1,16 @@
-# WP-plugintemplate
+# WP-offres-emploi-intranet
 
 ## Features
 A WordPress plugin.
 
-![WP-plugintemplate screenshot](screenshot.png "WP-plugintemplate screenshot")
+![WP-offres-emploi-intranet screenshot](screenshot.png "WP-offres-emploi-intranet screenshot")
 
 ## Prerequisites
 - PHP 8.0
 - WordPress 6.0
 
 ## Installation
-Download the latest WPplugintemplate.zip from [releases](https://git.manche.io/wordpress/wpplugintemplate/-/releases) and install it via WordPress plugin admin menu.
+Download the latest WP-offres-emploi-intranet.zip from [releases](https://git.manche.io/wordpress/wp-offres-emploi-intranet/-/releases) and install it via WordPress plugin admin menu.
 
 ## Usage
 - Clone or fork this project to quickly set up a minimal viable WordPress plugin.
