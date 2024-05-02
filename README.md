@@ -27,7 +27,8 @@ Past, last & unreleased changes can be found in the [changelog](CHANGELOG.md)
 Let's stay organised : open an issue and discuss with project maintainer before submitting a pull request.
 
 ## Authors and acknowledgment
-- Coded with care by [William Mead](https://git.manche.io/wmead) AKA the Hacking Hipster
+- Coded with care by [Schneider Clément](https://github.com/clementtt1)
+- Helped by [William Mead](https://git.manche.io/wmead)
 
 ## Translation
 Follow standard WordPress plugin localization techniques and submit a pull request.
