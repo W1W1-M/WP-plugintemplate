@@ -145,7 +145,7 @@ class wp_offres_emploi_intranet_Options {
      * @return bool
      */
     public function sanitize_wp_offres_emploi_intranet_url_setting_input($input ): bool {
-        return preg_replace('%\b(([\w-]+://?|www[.])[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/)))%s', '<a href="$1">$1</a>', $input);
+        return preg_replace("/^((https|http|ftp)\:\/\/)?([a-z0-9A-Z]+\.[a-z0-9A-Z]+\.[a-z0-9A-Z]+\.[a-zA-Z]{2,4}|[a-z0-9A-Z]+\.[a-z0-9A-Z]+\.[a-zA-Z]{2,4}|[a-z0-9A-Z]+\.[a-zA-Z]{2,4})$/i", $input, $input);
     }
 
     /**
