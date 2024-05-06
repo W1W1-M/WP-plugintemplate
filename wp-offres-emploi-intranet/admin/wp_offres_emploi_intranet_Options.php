@@ -159,9 +159,6 @@ class wp_offres_emploi_intranet_Options {
         $html .= '<p><input size="50" type="url" id="wp_tarteaucitron_privacy_policy_url" name="wp_tarteaucitron_privacy_policy_url"';
         $html .= ' value="' . esc_attr( $this->get_option_wp_offres_emploi_intranet_url() ) . '"';
         $html .= ' placeholder=" " pattern="https?://.+"';
-        if( $this->get_option_wp_offres_emploi_intranet_url() ) {
-            $html .= ' disabled';
-        }
         $html .= '/></p>';
         echo $html;
     }
