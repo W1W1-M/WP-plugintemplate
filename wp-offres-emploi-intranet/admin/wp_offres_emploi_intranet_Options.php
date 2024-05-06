@@ -145,7 +145,7 @@ class wp_offres_emploi_intranet_Options {
      * @return bool
      */
     public function sanitize_wp_offres_emploi_intranet_url_setting_input($input ): bool {
-        return preg_replace("/^((https|http|ftp)\:\/\/)?([a-z0-9A-Z]+\.[a-z0-9A-Z]+\.[a-z0-9A-Z]+\.[a-zA-Z]{2,4}|[a-z0-9A-Z]+\.[a-z0-9A-Z]+\.[a-zA-Z]{2,4}|[a-z0-9A-Z]+\.[a-zA-Z]{2,4})$/i", $input, $input);
+        return $input;
     }
 
     /**
@@ -155,11 +155,12 @@ class wp_offres_emploi_intranet_Options {
      */
     public function use_wp_offres_emploi_intranet_url_field_callback(): void {
         $html = '<p>';
-        $html .= '<label for="wp_offres_emploi_intranet_url" hidden>wp_offres_emploi_intranet_url</label>';
-        $html .= '<input size="50" id="wp_offres_emploi_intranet_url" name="wp_offres_emploi_intranet_url"';
+        $html .= '<label for="wp_tarteaucitron_privacy_policy_url" hidden>wp_tarteaucitron_privacy_policy_url</label>';
+        $html .= '<p><input size="50" type="url" id="wp_tarteaucitron_privacy_policy_url" name="wp_tarteaucitron_privacy_policy_url"';
+        $html .= ' value="' . esc_attr( $this->get_option_wp_offres_emploi_intranet_url() ) . '"';
+        $html .= ' placeholder=" " pattern="https?://.+"';
         if( $this->get_option_wp_offres_emploi_intranet_url() ) {
-            $value = get_option( 'wp_offres_emploi_intranet_url' );
-            $html .= 'value="'.$value.'"';
+            $html .= ' disabled';
         }
         $html .= '/></p>';
         echo $html;
