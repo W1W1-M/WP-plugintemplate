@@ -119,13 +119,9 @@ class wp_offres_emploi_intranet_Options {
      * @return void
      */
     protected function setup_wp_offres_emploi_intranet_url_setting(): void {
-        $form_id_setting_args = array(
-            'sanitize_callback' => array( &$this, 'sanitize_wp_offres_emploi_intranet_url_setting_input')
-        );
         register_setting(
             'wp_offres_emploi_intranet_Options',
-            'wp_offres_emploi_intranet_url',
-            $form_id_setting_args
+            'wp_offres_emploi_intranet_url'
         );
         add_settings_field(
             'wp_offres_emploi_intranet_url_field',
@@ -135,17 +131,6 @@ class wp_offres_emploi_intranet_Options {
             'wp-offres-emploi-intranet',
             'wp_offres_emploi_intranet_settings_section'
         );
-    }
-
-    /**
-     * @since 1.0.0
-     *
-     * @param $input
-     *
-     * @return bool
-     */
-    public function sanitize_wp_offres_emploi_intranet_url_setting_input($input ): bool {
-        return $input;
     }
 
     /**
