@@ -124,7 +124,7 @@ class wp_offres_emploi_intranet_Options {
             'wp_offres_emploi_intranet_url'
         );
         add_settings_field(
-            'wp_offres_emploi_intranet_url_field',
+            'wp_offres_emploi_intranet_url',
             __( 'url setting', 'wp-offres-emploi-intranet' ), array( &$this,
             'use_wp_offres_emploi_intranet_url_field_callback'
         ),
@@ -135,26 +135,17 @@ class wp_offres_emploi_intranet_Options {
 
     /**
      * @since 1.0.0
-     *0
+     *
      * @return void
      */
     public function use_wp_offres_emploi_intranet_url_field_callback(): void {
         $html = '<p>';
         $html .= '<label for="wp_tarteaucitron_privacy_policy_url" hidden>wp_tarteaucitron_privacy_policy_url</label>';
-        $html .= '<p><input size="50" type="url" id="wp_tarteaucitron_privacy_policy_url" name="wp_tarteaucitron_privacy_policy_url"';
-        $html .= ' value="' . esc_attr( $this->get_option_wp_offres_emploi_intranet_url() ) . '"';
+        $html .= '<p><input size="50" type="url" id="wp_offres_emploi_intranet_url" name="wp_offres_emploi_intranet_url"';
+        $html .= ' value="' . esc_attr( get_option( 'wp_offres_emploi_intranet_url' ) ) . '"';
         $html .= ' placeholder=" " pattern="https?://.+"';
         $html .= '/></p>';
         echo $html;
-    }
-
-    /**
-     * @since 1.0.0
-     *
-     * @return bool
-     */
-    protected function get_option_wp_offres_emploi_intranet_url(): bool {
-        return get_option( 'wp_offres_emploi_intranet_url' );
     }
 
     /**
