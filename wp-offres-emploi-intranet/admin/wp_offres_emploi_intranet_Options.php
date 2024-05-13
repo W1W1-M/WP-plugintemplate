@@ -141,10 +141,11 @@ class wp_offres_emploi_intranet_Options {
     public function use_wp_offres_emploi_intranet_url_field_callback(): void {
         $html = '<p>';
         $html .= '<label for="wp_tarteaucitron_privacy_policy_url" hidden>wp_tarteaucitron_privacy_policy_url</label>';
-        $html .= '<p><input size="50" type="url" id="wp_offres_emploi_intranet_url" name="wp_offres_emploi_intranet_url"';
+        $html .= '<p><input size="50" type="url" id="wp_offres_emploi_intranet_url" name="wp_offres_emploi_intranet_url" required';
         $html .= ' value="' . esc_attr( get_option( 'wp_offres_emploi_intranet_url' ) ) . '"';
         $html .= ' placeholder=" " pattern="https?://.+"';
         $html .= '/></p>';
+	    wp_remote_get( 'http://intranet.manchenumerique.org/wp-json/wp/v2/offre' );
         echo $html;
     }
 
@@ -159,6 +160,22 @@ class wp_offres_emploi_intranet_Options {
         $links[] = '<a href="' . admin_url( 'options-general.php?page=wp-offres-emploi-intranet' ) . '">' . __('Settings') . '</a>';
         return $links;
     }
+
+	/**
+	 * @since 1.0.0
+     *
+     * @param $id
+	 *
+	 * @return data
+	 */
+
+	function offre_detail($id){
+        $id = '';
+		$request = wp_remote_get( 'http://intranet.manchenumerique.org/wp-json/wp/v2/offre/' . $id );
+		$body = wp_remote_retrieve_body( $request );
+		$data = json_decode( $body );
+		return $data;
+	}
 }
 
 ?>

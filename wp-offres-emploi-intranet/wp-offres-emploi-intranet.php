@@ -56,4 +56,33 @@ function wp_offres_emploi_intranet_require_once(): void {
     require_once $plugin_dir_path . 'admin/wp_offres_emploi_intranet_Options.php';
 }
 
+
+/**
+ * @since 1.0.0
+ *
+ * @param $id
+ *
+ * @return data
+ */
+
+function offre_detail($id){
+	$id = '';
+	$request = wp_remote_get( 'http://intranet.manchenumerique.org/wp-json/wp/v2/offre/' . $id );
+	$body = wp_remote_retrieve_body( $request );
+	$data = json_decode( $body );
+	return $data;
+}
+
+function shortcode_toutes_les_offres() {
+	$data = offre_detail(12);
+
+	foreach($data as $offre) :
+		?>
+		<a href="?offre=<?=$offre->id ?>"><?=$offre->ACF->identification->intitule ?></a>
+
+	<?php endforeach;
+}
+add_shortcode( 'offres', 'shortcode_toutes_les_offres' );
+
+
 ?>
