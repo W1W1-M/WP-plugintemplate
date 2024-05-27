@@ -160,22 +160,6 @@ class wp_offres_emploi_intranet_Options {
         $links[] = '<a href="' . admin_url( 'options-general.php?page=wp-offres-emploi-intranet' ) . '">' . __('Settings') . '</a>';
         return $links;
     }
-
-	/**
-	 * @since 1.0.0
-     *
-     * @param $id
-	 *
-	 * @return data
-	 */
-
-	function offre_detail($id){
-        $id = '';
-		$request = wp_remote_get( 'http://intranet.manchenumerique.org/wp-json/wp/v2/offre/' . $id );
-		$body = wp_remote_retrieve_body( $request );
-		$data = json_decode( $body );
-		return $data;
-	}
 }
 
 ?>
