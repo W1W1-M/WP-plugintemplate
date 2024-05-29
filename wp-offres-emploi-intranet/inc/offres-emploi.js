@@ -3,21 +3,26 @@ function afficherDetailOffre(offreDetails) {
 
     offreDetailElement.innerHTML = `
         <h2 style="text-align: center">${offreDetails.intitule}</h2>
+        <h3>Identification du poste</h3>
         <p><strong>Filière :</strong> ${offreDetails.filiere}</p>
-        <p>Lieu de travail : ${offreDetails.residence}</p>
-        <p>Direction: ${offreDetails.direction}</p>
-        <p>Type de recrutement: ${offreDetails.type_recrutement}</p>
-        <p>Cadre: ${offreDetails.cadre}</p>
-        <p>Date de prise de poste: ${offreDetails.date_prise_poste}</p>
-        <p>Rémunération: ${offreDetails.remuneration}</p>
-        <p>Missions: ${offreDetails.mission}</p>
-        <p>Profil: ${offreDetails.profil}</p>
-        <p>Spécificités: ${offreDetails.specificitees}</p>
-        <p>Conditions: ${offreDetails.conditions}</p>
+        <p><strong>Lieu de travail :</strong> ${offreDetails.residence}</p>
+        <p><strong>Direction :</strong> ${offreDetails.direction}</p>
+        <p><strong>Type de recrutement :</strong> ${offreDetails.type_recrutement}</p>
+        <p><strong>Cadre :</strong> ${offreDetails.cadre}</p>
+        <p><strong>Date de prise de poste :</strong> ${offreDetails.date_prise_poste}</p>
+        <p><strong>Rémunération :</strong> ${offreDetails.remuneration}</p>
+        <h3>Missions et responsabilités</h3>
+        <p><strong>Missions :</strong> ${offreDetails.mission}</p>
+        <h3>Profil et compétences</h3>
+        <p><strong>Profil :</strong> ${offreDetails.profil}</p>
+        <h3>Spécificités d'embauche</h3>
+        <p><strong>Spécificités :</strong> ${offreDetails.specificitees}</p>
+        <h3>Conditions d'embauche</h3>
+        <p><strong>Conditions :</strong> ${offreDetails.conditions}</p>
     `;
 }
 
-var offreButtons = document.getElementsByClassName('test');
+var offreButtons = document.getElementsByClassName('offre');
 for (var i = 0; i < offreButtons.length; i++) {
     offreButtons[i].addEventListener('click', function() {
         var offreDetails = {
