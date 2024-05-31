@@ -22,6 +22,8 @@ class wp_offres_emploi_intranet_Setup {
             $this->wordpress_absolute_path_available();
             register_activation_hook( WP_OFFRES_EMPLOI_INTRANET_PLUGIN_FILE_PATH, array( $this, 'plugin_activate' ) );
             register_deactivation_hook( WP_OFFRES_EMPLOI_INTRANET_PLUGIN_FILE_PATH, array( $this, 'plugin_deactivate' ) );
+	        add_shortcode( 'offres', array( $this, 'shortcode_toutes_les_offres' ));
+	        add_action( 'wp_enqueue_scripts', array( $this, 'script_js' ));
         } catch ( Exception $exception ) {
             exit( $exception->getMessage() );
         }
