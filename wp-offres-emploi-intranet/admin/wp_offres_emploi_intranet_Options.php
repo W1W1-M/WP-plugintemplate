@@ -163,11 +163,20 @@ class wp_offres_emploi_intranet_Options {
         return $links;
     }
 
-
+	/**
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
 	public function script_js() {
 		wp_enqueue_script( 'offre-emploi-script', plugins_url( '../inc/offres-emploi.js', __FILE__ ), array(), '1.0', true );
 	}
 
+	/**
+	 * @since 1.0.0
+	 *
+	 * @return data
+	 */
     public function offres(){
 		$url = get_option( 'wp_offres_emploi_intranet_url' );
 		$request = wp_remote_get( $url );
@@ -176,6 +185,11 @@ class wp_offres_emploi_intranet_Options {
 		return $data;
 	}
 
+	/**
+	 * @since 1.0.0
+	 *
+	 * @return String
+	 */
     public function shortcode_toutes_les_offres() {
 		$data = $this->offres();
 		$html = '<div id="offres">';
@@ -232,6 +246,11 @@ class wp_offres_emploi_intranet_Options {
 	}
 
 
+	/**
+	 * @since 1.0.0
+	 *
+	 * @return String
+	 */
 	public function acf_maj($object) {
 		$acf = "acf";
 		if (property_exists($object, 'ACF')) {
