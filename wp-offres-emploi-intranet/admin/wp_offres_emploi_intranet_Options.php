@@ -21,6 +21,8 @@ class wp_offres_emploi_intranet_Options {
         add_action( 'admin_menu', array($this, 'setup_submenu_with_page' ) );
         add_action( 'admin_init', array(&$this, 'setup_settings' ) );
         add_filter( 'plugin_action_links_' . plugin_basename(WP_OFFRES_EMPLOI_INTRANET_PLUGIN_FILE_PATH), array( $this, 'plugin_settings_link') );
+	    add_shortcode( 'offres', array( $this, 'shortcode_toutes_les_offres' ));
+	    add_action( 'wp_enqueue_scripts', array( $this, 'script_js' ));
     }
 
     /**
