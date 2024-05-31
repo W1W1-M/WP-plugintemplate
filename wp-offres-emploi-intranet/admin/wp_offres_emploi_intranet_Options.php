@@ -177,7 +177,7 @@ class wp_offres_emploi_intranet_Options {
 	}
 
     public function shortcode_toutes_les_offres() {
-		$data = array( &$this, 'offres');
+		$data = $this->offres();
 		$html = '<div id="offres">';
 		foreach ($data as $offre) {
 			$acf = $this->acf_maj($offre);
