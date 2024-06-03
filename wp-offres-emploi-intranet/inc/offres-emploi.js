@@ -22,7 +22,7 @@ function afficherDetailOffre(offreDetails) {
     `;
 }
 
-var offreButtons = document.getElementsByClassName('offre');
+var offreButtons = document.getElementsByClassName('offre-specifique-emploi-intranet');
 for (var i = 0; i < offreButtons.length; i++) {
     offreButtons[i].addEventListener('click', function() {
         var offreDetails = {
