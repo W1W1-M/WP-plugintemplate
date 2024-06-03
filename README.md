@@ -21,8 +21,8 @@ To display the list of job offers, use the `[wp_offres_emploi_intranet]` shortco
 ## Customization
 To customize the appearance of the job offers displayed by the plugin, you can use the following IDs and classes in your CSS:
 
-- `#offres`: This div wraps around all displayed job offers.
-- `.offre`: Each job offer is encapsulated in a button with the class `.offre`.
+- `#affichage-offres-emploi-intranet`: This div wraps around all displayed job offers.
+- `.offre-specifique-emploi-intranet`: Each job offer is encapsulated in a button with the class `.offre`.
     - Within each offer, you'll find the following elements with classes and data attributes to facilitate CSS targeting:
         - `.intitule-offre-emploi-intranet`: The job offer's title.
         - `.date-offre-emploi-intranet`: The publication date of the job offer.

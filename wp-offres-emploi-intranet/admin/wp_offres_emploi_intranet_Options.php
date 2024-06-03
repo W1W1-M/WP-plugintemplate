@@ -213,7 +213,7 @@ class wp_offres_emploi_intranet_Options {
 			$filiere_label = ($filiere == "prive") ? '<label>' . __("private low", "wp-offre-emploi-intranet") . '</label>' : '<label>' . __("public low", "wp-offre-emploi-intranet") . '</label>';
 
 			$html .= '
-        <button class="offre"
+        <button class="offre-specifique-emploi-intranet"
                 style="border: solid; text-align: center; position: relative;"
                 data-offre-id="' . esc_html($offre->id) . '"
                 data-intitule="' . esc_html($intitule) . '"
