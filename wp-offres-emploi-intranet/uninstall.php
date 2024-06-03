@@ -41,7 +41,7 @@ function wordpress_plugin_uninstall_called(): bool {
  * @return void
  */
 function delete_options(): void {
-    delete_option( 'wp_offres_emploi_intranet_dummy' );
+	delete_option( 'wp_offres_emploi_intranet_url' );
 }
 
 ?>
