@@ -16,7 +16,7 @@ Download the latest WP-offres-emploi-intranet.zip from [releases](https://git.ma
 - Update this plugin template with any WordPress standard plugin practices.
 
 ### Shortcode
-To display the list of job offers, use the `[shortcode_toutes_les_offres]` shortcode in your WordPress posts or pages.
+To display the list of job offers, use the `[wp_offres_emploi_intranet]` shortcode in your WordPress posts or pages.
 
 ## Customization
 To customize the appearance of the job offers displayed by the plugin, you can use the following IDs and classes in your CSS:
