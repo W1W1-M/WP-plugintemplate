@@ -3,7 +3,7 @@
  * WP-plugintemplate
  *
  * @package         WP-offres-emploi-intranet
- * @version         1.0.1
+ * @version         1.0.0
  * @author          Clément Schneider - Manche Numérique
  * @copyright       2023 Manche Numérique
  * @license         GPL-3.0-or-later
@@ -12,9 +12,9 @@
  * Plugin Name:          WP-offres-emploi-intranet
  * Plugin URI:           https://git.manche.io/wordpress/wp-offres-emploi-intranet
  * Description:          Plugin description
- * Version:              1.0.1
+ * Version:              1.0.0
  * Requires at least:    6.0.5
- * Requires PHP:         8.2.4
+ * Requires PHP:         8.0
  * Author:               Clément Schneider - Manche Numérique
  * Author URI:           https://www.manchenumerique.fr
  * License:              GNU GPLv3
