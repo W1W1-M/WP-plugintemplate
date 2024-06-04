@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-offres-emploi-intranet\n"
-"POT-Creation-Date: 2024-06-03 16:39+0200\n"
-"PO-Revision-Date: 2024-06-03 16:43+0200\n"
+"POT-Creation-Date: 2024-06-04 10:40+0200\n"
+"PO-Revision-Date: 2024-06-04 10:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -24,7 +24,7 @@ msgstr ""
 "administrateur WordPress."
 
 #: admin/wp_offres_emploi_intranet_Options.php:104
-#: admin/wp_offres_emploi_intranet_Options.php:161
+#: admin/wp_offres_emploi_intranet_Options.php:179
 msgid "Settings"
 msgstr "Paramètres"
 
@@ -32,25 +32,62 @@ msgstr "Paramètres"
 msgid "url setting"
 msgstr "paramètres de l'URL"
 
-#: admin/wp_offres_emploi_intranet_Options.php:198
-#: admin/wp_offres_emploi_intranet_Options.php:199
-#: admin/wp_offres_emploi_intranet_Options.php:200
-#: admin/wp_offres_emploi_intranet_Options.php:201
-#: admin/wp_offres_emploi_intranet_Options.php:202
-#: admin/wp_offres_emploi_intranet_Options.php:203
-#: admin/wp_offres_emploi_intranet_Options.php:204
-#: admin/wp_offres_emploi_intranet_Options.php:205
-#: admin/wp_offres_emploi_intranet_Options.php:206
-#: admin/wp_offres_emploi_intranet_Options.php:207
-#: admin/wp_offres_emploi_intranet_Options.php:208
-#: admin/wp_offres_emploi_intranet_Options.php:209
+#: admin/wp_offres_emploi_intranet_Options.php:151
+msgid "You have to enter the URL of the API providing the job offers."
+msgstr "Vous devez saisir l'URL de l'API fournissant les offres d'emploi."
+
+#: admin/wp_offres_emploi_intranet_Options.php:154
+msgid ""
+"'#affichage-offres-emploi-intranet': This div wraps around all displayed job "
+"offers."
+msgstr ""
+"'#affichage-offres-emploi-intranet': Cette div regroupe toutes les offres "
+"d’emploi affichées."
+
+#: admin/wp_offres_emploi_intranet_Options.php:157
+msgid ""
+"'.offre-specifique-emploi-intranet': Each job offer is encapsulated in a "
+"button with the class '.offre-specifique-emploi-intranet'."
+msgstr ""
+"'.offre-specifique-emploi-intranet' : Chaque offre d'emploi est encapsulée "
+"dans un bouton avec la classe '.offre-specifique-emploi-intranet'."
+
+#: admin/wp_offres_emploi_intranet_Options.php:160
+msgid "'.intitule-offre-emploi-intranet': The job offer's title."
+msgstr "'.intitule-offre-emploi-intranet' : Le titre de l'offre d'emploi."
+
+#: admin/wp_offres_emploi_intranet_Options.php:163
+msgid "'.date-offre-emploi-intranet': The publication date of the job offer."
+msgstr ""
+"'.date-offre-emploi-intranet' : La date de publication de l'offre d'emploi."
+
+#: admin/wp_offres_emploi_intranet_Options.php:166
+msgid ""
+"'.filiere-offre-emploi-intranet': The type of job offer (e.g., public or "
+"private)."
+msgstr ""
+"« .filiere-offre-emploi-intranet » : Le type d'offre d'emploi (ex. : "
+"publique ou privée)."
+
+#: admin/wp_offres_emploi_intranet_Options.php:216
+#: admin/wp_offres_emploi_intranet_Options.php:217
+#: admin/wp_offres_emploi_intranet_Options.php:218
+#: admin/wp_offres_emploi_intranet_Options.php:219
+#: admin/wp_offres_emploi_intranet_Options.php:220
+#: admin/wp_offres_emploi_intranet_Options.php:221
+#: admin/wp_offres_emploi_intranet_Options.php:222
+#: admin/wp_offres_emploi_intranet_Options.php:223
+#: admin/wp_offres_emploi_intranet_Options.php:224
+#: admin/wp_offres_emploi_intranet_Options.php:225
+#: admin/wp_offres_emploi_intranet_Options.php:226
+#: admin/wp_offres_emploi_intranet_Options.php:227
 msgid "not specified"
 msgstr "non renseigné"
 
-#: admin/wp_offres_emploi_intranet_Options.php:213
+#: admin/wp_offres_emploi_intranet_Options.php:231
 msgid "private low"
 msgstr "droit privé"
 
-#: admin/wp_offres_emploi_intranet_Options.php:213
+#: admin/wp_offres_emploi_intranet_Options.php:231
 msgid "public low"
 msgstr "droit public"

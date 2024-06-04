@@ -147,6 +147,24 @@ class wp_offres_emploi_intranet_Options {
         $html .= ' value="' . esc_attr( get_option( 'wp_offres_emploi_intranet_url' ) ) . '"';
         $html .= ' placeholder=" " pattern="https?://.+"';
         $html .= '/></p>';
+	    $html .= '<p>';
+	    $html .= __("You have to enter the URL of the API providing the job offers.", "wp-offres-emploi-intranet");
+	    $html .= '</p>';
+	    $html .= '<p>';
+	    $html .= __("'#affichage-offres-emploi-intranet': This div wraps around all displayed job offers.", "wp-offres-emploi-intranet");
+	    $html .= '</p>';
+	    $html .= '<p>';
+	    $html .= __("'.offre-specifique-emploi-intranet': Each job offer is encapsulated in a button with the class '.offre-specifique-emploi-intranet'.", "wp-offres-emploi-intranet");
+	    $html .= '</p>';
+	    $html .= '<p>';
+	    $html .= __("'.intitule-offre-emploi-intranet': The job offer's title.", "wp-offres-emploi-intranet");
+	    $html .= '</p>';
+	    $html .= '<p>';
+	    $html .= __("'.date-offre-emploi-intranet': The publication date of the job offer.", "wp-offres-emploi-intranet");
+	    $html .= '</p>';
+	    $html .= '<p>';
+	    $html .= __("'.filiere-offre-emploi-intranet': The type of job offer (e.g., public or private).", "wp-offres-emploi-intranet");
+	    $html .= '</p>';
         echo $html;
     }
 
@@ -195,26 +213,25 @@ class wp_offres_emploi_intranet_Options {
 		$html = '<div id="affichage-offres-emploi-intranet">';
 		foreach ($data as $offre) {
 			$acf_label_case = $this->acf_maj($offre);
-			$intitule = !empty($offre->$acf_label_case->identification->intitule) ? $offre->$acf_label_case->identification->intitule : __("not specified", "wp-offre-emploi-intranet");
-			$filiere = !empty($offre->$acf_label_case->identification->filiere[0]) ? $offre->$acf_label_case->identification->filiere[0] : __("not specified", "wp-offre-emploi-intranet");
-			$residence = !empty($offre->$acf_label_case->identification->residence) ? $offre->$acf_label_case->identification->residence : __("not specified", "wp-offre-emploi-intranet");
-			$direction = !empty($offre->$acf_label_case->identification->direction) ? $offre->$acf_label_case->identification->direction : __("not specified", "wp-offre-emploi-intranet");
-			$type_recrutement = !empty($offre->$acf_label_case->identification->type_recrutement) ? $offre->$acf_label_case->identification->type_recrutement : __("not specified", "wp-offre-emploi-intranet");
-			$cadre = !empty($offre->$acf_label_case->identification->cadre) ? $offre->$acf_label_case->identification->cadre : __("not specified", "wp-offre-emploi-intranet");
-			$prise_fonction = !empty($offre->$acf_label_case->identification->prise_fonction) ? $offre->$acf_label_case->identification->prise_fonction : __("not specified", "wp-offre-emploi-intranet");
-			$remuneration = !empty($offre->$acf_label_case->identification->remuneration) ? $offre->$acf_label_case->identification->remuneration : __("not specified", "wp-offre-emploi-intranet");
-			$missions = !empty($offre->$acf_label_case->missions) ? $offre->$acf_label_case->missions : __("not specified", "wp-offre-emploi-intranet");
-			$profil = !empty($offre->$acf_label_case->profil) ? $offre->$acf_label_case->profil : __("not specified", "wp-offre-emploi-intranet");
-			$specificites = !empty($offre->$acf_label_case->specificites) ? $offre->$acf_label_case->specificites : __("not specified", "wp-offre-emploi-intranet");
-			$conditions = !empty($offre->$acf_label_case->conditions) ? $offre->$acf_label_case->conditions : __("not specified", "wp-offre-emploi-intranet");
+			$intitule = !empty($offre->$acf_label_case->identification->intitule) ? $offre->$acf_label_case->identification->intitule : __("not specified", "wp-offres-emploi-intranet");
+			$filiere = !empty($offre->$acf_label_case->identification->filiere[0]) ? $offre->$acf_label_case->identification->filiere[0] : __("not specified", "wp-offres-emploi-intranet");
+			$residence = !empty($offre->$acf_label_case->identification->residence) ? $offre->$acf_label_case->identification->residence : __("not specified", "wp-offres-emploi-intranet");
+			$direction = !empty($offre->$acf_label_case->identification->direction) ? $offre->$acf_label_case->identification->direction : __("not specified", "wp-offres-emploi-intranet");
+			$type_recrutement = !empty($offre->$acf_label_case->identification->type_recrutement) ? $offre->$acf_label_case->identification->type_recrutement : __("not specified", "wp-offres-emploi-intranet");
+			$cadre = !empty($offre->$acf_label_case->identification->cadre) ? $offre->$acf_label_case->identification->cadre : __("not specified", "wp-offres-emploi-intranet");
+			$prise_fonction = !empty($offre->$acf_label_case->identification->prise_fonction) ? $offre->$acf_label_case->identification->prise_fonction : __("not specified", "wp-offres-emploi-intranet");
+			$remuneration = !empty($offre->$acf_label_case->identification->remuneration) ? $offre->$acf_label_case->identification->remuneration : __("not specified", "wp-offres-emploi-intranet");
+			$missions = !empty($offre->$acf_label_case->missions) ? $offre->$acf_label_case->missions : __("not specified", "wp-offres-emploi-intranet");
+			$profil = !empty($offre->$acf_label_case->profil) ? $offre->$acf_label_case->profil : __("not specified", "wp-offres-emploi-intranet");
+			$specificites = !empty($offre->$acf_label_case->specificites) ? $offre->$acf_label_case->specificites : __("not specified", "wp-offres-emploi-intranet");
+			$conditions = !empty($offre->$acf_label_case->conditions) ? $offre->$acf_label_case->conditions : __("not specified", "wp-offres-emploi-intranet");
 
 			$timestamp = strtotime($offre->date);
 			$date = date("d/m/Y", $timestamp);
-			$filiere_label = ($filiere == "prive") ? '<label>' . __("private low", "wp-offre-emploi-intranet") . '</label>' : '<label>' . __("public low", "wp-offre-emploi-intranet") . '</label>';
+			$filiere_label = ($filiere == "prive") ? '<label>' . __("private low", "wp-offres-emploi-intranet") . '</label>' : '<label>' . __("public low", "wp-offres-emploi-intranet") . '</label>';
 
 			$html .= '
         <button class="offre-specifique-emploi-intranet"
-                style="border: solid; text-align: center; position: relative;"
                 data-offre-id="' . esc_html($offre->id) . '"
                 data-intitule="' . esc_html($intitule) . '"
                 data-filiere="' . esc_html($filiere) . '"
@@ -228,13 +245,13 @@ class wp_offres_emploi_intranet_Options {
                 data-profil="' . esc_html($profil) . '"
                 data-specificitees="' . esc_html($specificites) . '"
                 data-conditions="' . esc_html($conditions) . '">
-            <div class="intitule-offre-emploi-intranet" style="display: inline-block; height: 50px;">
+            <div class="intitule-offre-emploi-intranet">
                 ' . esc_html($intitule) . '
             </div>
-            <div class="date-offre-emploi-intranet" style="position: absolute; bottom: 0; right: 0;">
+            <div class="date-offre-emploi-intranet">
                 ' . esc_html($date) . '
             </div>
-            <div class="filiere-offre-emploi-intranet" style="position: absolute; bottom: 0;">
+            <div class="filiere-offre-emploi-intranet">
                 ' . $filiere_label . '
             </div>
         </button>';
