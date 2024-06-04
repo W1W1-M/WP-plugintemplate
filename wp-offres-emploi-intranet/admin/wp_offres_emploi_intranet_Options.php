@@ -199,7 +199,7 @@ class wp_offres_emploi_intranet_Options {
 	        return json_decode( wp_remote_retrieve_body( wp_remote_get( get_option( 'wp_offres_emploi_intranet_url'))));
         }
         catch(Exception $e){
-            echo "Aucune offre n'est disponible";
+            echo __("No offers available","wp-offres-emploi-intranet");
         }
     }
 
