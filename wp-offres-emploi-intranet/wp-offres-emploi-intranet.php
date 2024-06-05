@@ -12,7 +12,7 @@
  * Plugin Name:          WP-offres-emploi-intranet
  * Plugin URI:           https://git.manche.io/wordpress/wp-offres-emploi-intranet
  * Description:          Plugin description
- * Version:              1.0.1
+ * Version:              1.1.0
  * Requires at least:    6.0.5
  * Requires PHP:         8.0
  * Author:               Clément Schneider - Manche Numérique
