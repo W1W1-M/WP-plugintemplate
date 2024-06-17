@@ -22,7 +22,7 @@ class wp_offres_emploi_intranet_Setup {
 			$this->wordpress_absolute_path_available();
 			register_activation_hook( WP_OFFRES_EMPLOI_INTRANET_PLUGIN_FILE_PATH, array( $this, 'plugin_activate' ) );
 			register_deactivation_hook( WP_OFFRES_EMPLOI_INTRANET_PLUGIN_FILE_PATH, array( $this, 'plugin_deactivate' ) );
-			add_action('plugins_loaded', 'my_plugin_load_textdomain');
+			add_action('plugins_loaded', array ( $this, 'load_textdomain' ) );
 		} catch ( Exception $exception ) {
 			exit( $exception->getMessage() );
 		}
@@ -68,8 +68,8 @@ class wp_offres_emploi_intranet_Setup {
 	 *
 	 * @return void
 	 */
-	function my_plugin_load_textdomain(): void {
-		load_plugin_textdomain('wp-offres-emploi-intranet', false, dirname(plugin_basename(__FILE__)) . '/lang');
+	function load_textdomain(): void {
+		load_plugin_textdomain('wp-offres-emploi-intranet', false, dirname( plugin_basename( WP_OFFRES_EMPLOI_INTRANET_PLUGIN_FILE_PATH ) ) . '/lang/' );
 	}
 
 }
