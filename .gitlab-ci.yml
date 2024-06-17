@@ -7,13 +7,13 @@ stages:
 package-job:
   stage: package
   script:
-    - echo "Packaging wp-offres-emploi-intranet plugin ..."
+    - echo "Packaging WP-plugintemplate plugin ..."
     - mkdir artifacts
-    - cp LICENSE wp-offres-emploi-intranet/LICENSE
-    - cp README.md wp-offres-emploi-intranet/README.md
-    - cp CHANGELOG.md wp-offres-emploi-intranet/CHANGELOG.md
-    - zip -r ./artifacts/wp-offres-emploi-intranet.zip ./wp-offres-emploi-intranet/
-    - echo "wp-offres-emploi-intranet plugin packaged."
+    - cp LICENSE wp-plugintemplate/LICENSE
+    - cp README.md wp-plugintemplate/README.md
+    - cp CHANGELOG.md wp-plugintemplate/CHANGELOG.md
+    - zip -r ./artifacts/wp-plugintemplate.zip ./wp-plugintemplate/
+    - echo "WP-plugintemplate plugin packaged."
   artifacts:
     name: '$CI_JOB_NAME $CI_COMMIT_SHORT_SHA'
     untracked: false
@@ -25,12 +25,12 @@ release-job:
   rules:
     - if: $CI_COMMIT_TAG
   script:
-    - echo "Release wp-offres-emploi-intranet plugin $CI_COMMIT_TAG ..."
-    - echo "wp-offres-emploi-intranet plugin released."
+    - echo "Release WP-plugintemplate plugin $CI_COMMIT_TAG ..."
+    - echo "WP-plugintemplate plugin released."
   dependencies:
     - package-job
   artifacts:
-    name: 'wp-offres-emploi-intranet_$CI_COMMIT_TAG'
+    name: 'wp-plugintemplate_$CI_COMMIT_TAG'
     untracked: false
     paths:
       - artifacts/
@@ -40,6 +40,6 @@ release-job:
     ref: '$CI_COMMIT_SHA'
     assets:
       links:
-      - name: 'wp-offres-emploi-intranet $CI_COMMIT_TAG'
-        url: 'https://git.manche.io/wordpress/wp-offres-emploi-intranet/-/jobs/$CI_JOB_ID/artifacts/download'
+      - name: 'WP-plugintemplate $CI_COMMIT_TAG'
+        url: 'https://git.manche.io/wordpress/wpplugintemplate/-/jobs/$CI_JOB_ID/artifacts/download'
         link_type: package
