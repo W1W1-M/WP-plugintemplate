@@ -12,13 +12,13 @@ function afficherDetailOffre(offreDetails) {
         <p><strong>Date de prise de poste :</strong> ${offreDetails.date_prise_poste}</p>
         <p><strong>Rémunération :</strong> ${offreDetails.remuneration}</p>
         <h5>Missions et responsabilités</h5>
-        <p><strong>Missions :</strong> ${offreDetails.mission}</p>
+        <p>${offreDetails.mission}</p>
         <h5>Profil et compétences</h5>
-        <p><strong>Profil :</strong> ${offreDetails.profil}</p>
+        <p>${offreDetails.profil}</p>
         <h5>Spécificités d'embauche</h5>
-        <p><strong>Spécificités :</strong> ${offreDetails.specificitees}</p>
+        <p>${offreDetails.specificitees}</p>
         <h5>Conditions d'embauche</h5>
-        <p><strong>Conditions :</strong> ${offreDetails.conditions}</p>
+        <p>${offreDetails.conditions}</p>
     `;
 }
 
