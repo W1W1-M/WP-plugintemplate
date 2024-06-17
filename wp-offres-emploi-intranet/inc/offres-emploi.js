@@ -2,8 +2,8 @@ function afficherDetailOffre(offreDetails) {
     var offreDetailElement = document.getElementById('offre-detail');
 
     offreDetailElement.innerHTML = `
-        <h2 style="text-align: center">${offreDetails.intitule}</h2>
-        <h3>Identification du poste</h3>
+        <h3 style="text-align: center">${offreDetails.intitule}</h3>
+        <h5>Identification du poste</h5>
         <p><strong>Filière :</strong> ${offreDetails.filiere}</p>
         <p><strong>Lieu de travail :</strong> ${offreDetails.residence}</p>
         <p><strong>Direction :</strong> ${offreDetails.direction}</p>
@@ -11,13 +11,13 @@ function afficherDetailOffre(offreDetails) {
         <p><strong>Cadre :</strong> ${offreDetails.cadre}</p>
         <p><strong>Date de prise de poste :</strong> ${offreDetails.date_prise_poste}</p>
         <p><strong>Rémunération :</strong> ${offreDetails.remuneration}</p>
-        <h3>Missions et responsabilités</h3>
+        <h5>Missions et responsabilités</h5>
         <p><strong>Missions :</strong> ${offreDetails.mission}</p>
-        <h3>Profil et compétences</h3>
+        <h5>Profil et compétences</h5>
         <p><strong>Profil :</strong> ${offreDetails.profil}</p>
-        <h3>Spécificités d'embauche</h3>
+        <h5>Spécificités d'embauche</h5>
         <p><strong>Spécificités :</strong> ${offreDetails.specificitees}</p>
-        <h3>Conditions d'embauche</h3>
+        <h5>Conditions d'embauche</h5>
         <p><strong>Conditions :</strong> ${offreDetails.conditions}</p>
     `;
 }
