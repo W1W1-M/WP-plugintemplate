@@ -1,10 +1,10 @@
 # WP-offres-emploi-intranet
 
 ## Features
-A WordPress plugin.
+A WordPress plugin to get & show job offers CPT from another WP site.
 
 ## Prerequisites
-- PHP 8.0
+- PHP 8.1
 - WordPress 6.0
 
 ## Installation
@@ -44,8 +44,7 @@ Past, last & unreleased changes can be found in the [changelog](CHANGELOG.md)
 Let's stay organised : open an issue and discuss with project maintainer before submitting a pull request.
 
 ## Authors and acknowledgment
-- Coded with care by [Schneider Clément](https://github.com/clementtt1)
-- Helped by [William Mead](https://git.manche.io/wmead)
+- Coded with care by [Schneider Clément](https://github.com/clementtt1) & [William Mead](https://git.manche.io/wmead)
 
 ## Translation
 Follow standard WordPress plugin localization techniques and submit a pull request.
