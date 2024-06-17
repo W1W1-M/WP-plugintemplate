@@ -1,13 +1,13 @@
 <?php /** @noinspection PhpRedundantClosingTagInspection */
 
-wp_offres_emploi_intranet_uninstall();
+wp_plugintemplate_uninstall();
 
 /**
  * @since 1.0.1
  *
  * @return void
  */
-function wp_offres_emploi_intranet_uninstall(): void {
+function wp_plugintemplate_uninstall(): void {
     try {
         wordpress_plugin_uninstall_called();
         delete_options();
@@ -41,7 +41,7 @@ function wordpress_plugin_uninstall_called(): bool {
  * @return void
  */
 function delete_options(): void {
-	delete_option( 'wp_offres_emploi_intranet_url' );
+    delete_option( 'wp_plugintemplate_dummy' );
 }
 
 ?>

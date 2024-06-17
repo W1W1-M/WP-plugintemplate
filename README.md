@@ -1,38 +1,21 @@
-# WP-offres-emploi-intranet
+# WP-plugintemplate
 
 ## Features
-A WordPress plugin to get & show job offers CPT from another WP site.
+A WordPress plugin.
+
+![WP-plugintemplate screenshot](screenshot.png "WP-plugintemplate screenshot")
 
 ## Prerequisites
-- PHP 8.1
+- PHP 8.0
 - WordPress 6.0
 
 ## Installation
-Download the latest WP-offres-emploi-intranet.zip from [releases](https://git.manche.io/wordpress/wp-offres-emploi-intranet/-/releases) and install it via WordPress plugin admin menu.
+Download the latest WPplugintemplate.zip from [releases](https://git.manche.io/wordpress/wpplugintemplate/-/releases) and install it via WordPress plugin admin menu.
 
 ## Usage
 - Clone or fork this project to quickly set up a minimal viable WordPress plugin.
 - Customize plugin to your needs.
 - Update this plugin template with any WordPress standard plugin practices.
-
-### Shortcode
-To display the list of job offers, use the `[wp_offres_emploi_intranet]` shortcode in your WordPress posts or pages.
-
-## Customization
-To customize the appearance of the job offers displayed by the plugin, you can use the following IDs and classes in your CSS:
-
-- `#affichage-offres-emploi-intranet`: This div wraps around all displayed job offers.
-- `.offre-specifique-emploi-intranet`: Each job offer is encapsulated in a button with the class `.offre-specifique-emploi-intranet`.
-    - Within each offer, you'll find the following elements with classes and data attributes to facilitate CSS targeting:
-        - `.intitule-offre-emploi-intranet`: The job offer's title.
-        - `.date-offre-emploi-intranet`: The publication date of the job offer.
-        - `.filiere-offre-emploi-intranet`: The type of job offer (e.g., public or private).
-
-## API Configuration
-After installing the plugin, navigate to the WordPress admin dashboard:
-1. Go to **Settings** > **WP Offres Emploi**.
-2. Enter the URL of the API providing the job offers.
-3. Save your changes.
 
 ## Support
 Open an issue on our GitLab for technical issues.
@@ -44,7 +27,7 @@ Past, last & unreleased changes can be found in the [changelog](CHANGELOG.md)
 Let's stay organised : open an issue and discuss with project maintainer before submitting a pull request.
 
 ## Authors and acknowledgment
-- Coded with care by [Schneider Clément](https://github.com/clementtt1) & [William Mead](https://git.manche.io/wmead)
+- Coded with care by [William Mead](https://git.manche.io/wmead) AKA the Hacking Hipster
 
 ## Translation
 Follow standard WordPress plugin localization techniques and submit a pull request.
