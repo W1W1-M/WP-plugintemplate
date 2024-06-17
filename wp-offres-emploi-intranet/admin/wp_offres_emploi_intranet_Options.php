@@ -5,14 +5,14 @@
  */
 class wp_offres_emploi_intranet_Options {
 
-    /**
-     * @since 1.0.0
-     */
-    public function __construct() {
+	/**
+	 * @since 1.0.0
+	 */
+	public function __construct() {
 
-    }
+	}
 
-    /**
+	/**
      * @since 1.0.0
      *
      * @return void
@@ -21,11 +21,11 @@ class wp_offres_emploi_intranet_Options {
         add_action( 'admin_menu', array($this, 'setup_submenu_with_page' ) );
         add_action( 'admin_init', array(&$this, 'setup_settings' ) );
         add_filter( 'plugin_action_links_' . plugin_basename(WP_OFFRES_EMPLOI_INTRANET_PLUGIN_FILE_PATH), array( $this, 'plugin_settings_link') );
-	    add_shortcode( 'wp_offres_emploi_intranet', array( $this, 'shortcode_toutes_les_offres' ));
 	    add_action( 'wp_enqueue_scripts', array( $this, 'script_js' ));
-    }
+	    add_shortcode( 'wp_offres_emploi_intranet', array( $this, 'shortcode_toutes_les_offres' ));
+	}
 
-    /**
+	/**
      * @since 1.0.0
      *
      * @return void
@@ -47,25 +47,13 @@ class wp_offres_emploi_intranet_Options {
      * @return void
      */
     public function setup_page(): void {
-        if ( current_user_can( 'manage_options' ) ) {
-            ?>
-            <div class="wrap">
-                <div class="">
-                    <h1><?php echo esc_html( get_admin_page_title() ) ?></h1>
-                    <?php $this->setup_settings_form() ?>
-                </div>
-            </div>
-            <?php
-        } else {
-            ?>
-            <div class="wrap">
-                <div class="">
-                    <h1><?php echo esc_html( get_admin_page_title() ) ?></h1>
-                    <h3><?php _e( 'You are not authorised to manage these settings. Please contact your WordPress administrator.', 'wpforms-cpt' ) ?></h3>
-                </div>
-            </div>
-            <?php
-        }
+		echo '<div class="wrap"><div class=""><h1>' . esc_html( get_admin_page_title() ) . '</h1>';
+		if ( current_user_can( 'manage_options' ) ) {
+			$this->setup_settings_form();
+		} else {
+			echo '<h3>' . _e( 'You are not authorised to manage these settings. Please contact your WordPress administrator.', 'wpforms-cpt' ) . '</h3>';
+		}
+		echo '</div></div>';
     }
 
     /**
@@ -185,30 +173,31 @@ class wp_offres_emploi_intranet_Options {
 	 *
 	 * @return void
 	 */
-	public function script_js() {
+	public function script_js(): void {
 		wp_enqueue_script( 'offre-emploi-script', plugins_url( '../inc/offres-emploi.js', __FILE__ ), array(), '1.0', true );
 	}
 
 	/**
 	 * @since 1.0.0
 	 *
-	 * @return data
+	 * @return mixed
 	 */
-    public function offres(){
-        try{
-	        return json_decode( wp_remote_retrieve_body( wp_remote_get( get_option( 'wp_offres_emploi_intranet_url'))));
-        }
-        catch(Exception $e){
-            echo __("No offers available","wp-offres-emploi-intranet");
-        }
-    }
+	public function offres(): mixed {
+		try{
+			return json_decode( wp_remote_retrieve_body( wp_remote_get( get_option( 'wp_offres_emploi_intranet_url'))));
+		}
+		catch( Exception $e ){
+			echo __("No offers available","wp-offres-emploi-intranet");
+			return null;
+		}
+	}
 
 	/**
 	 * @since 1.0.0
 	 *
 	 * @return String
 	 */
-    public function shortcode_toutes_les_offres() {
+    public function shortcode_toutes_les_offres(): string {
 		$data = $this->offres();
 		$html = '<div id="affichage-offres-emploi-intranet">';
 		foreach ($data as $offre) {
