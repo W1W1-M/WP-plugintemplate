@@ -6,8 +6,8 @@ A WordPress plugin.
 ![WP-plugintemplate screenshot](screenshot.png "WP-plugintemplate screenshot")
 
 ## Prerequisites
-- PHP 8.0
-- WordPress 6.0
+- PHP 8.1
+- WordPress 6.3
 
 ## Installation
 Download the latest WPplugintemplate.zip from [releases](https://git.manche.io/wordpress/wpplugintemplate/-/releases) and install it via WordPress plugin admin menu.
