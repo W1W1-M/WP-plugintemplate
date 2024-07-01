@@ -36,4 +36,4 @@ Follow standard WordPress plugin localization techniques and submit a pull reque
 This plugin is available under the terms of the GNU GPLv3 license. See the [LICENSE](LICENSE) file for a full copy of the license.
 
 ## Project status
-New & In progress
+Stable

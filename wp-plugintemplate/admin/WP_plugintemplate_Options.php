@@ -40,30 +40,20 @@ class WP_plugintemplate_Options {
     }
 
     /**
-     * @since 1.0.0
+     * @return string
+     *@since 1.0.0
      *
-     * @return void
      */
-    public function setup_page(): void {
+    public function setup_page(): string {
+	    $html = '<div class="wrap"><div class="">';
+	    $html .= '<h1>' . esc_html( get_admin_page_title() ) . '</h1>';
         if ( current_user_can( 'manage_options' ) ) {
-            ?>
-            <div class="wrap">
-                <div class="">
-                    <h1><?php echo esc_html( get_admin_page_title() ) ?></h1>
-                    <?php $this->setup_settings_form() ?>
-                </div>
-            </div>
-            <?php
+            $this->setup_settings_form();
         } else {
-            ?>
-            <div class="wrap">
-                <div class="">
-                    <h1><?php echo esc_html( get_admin_page_title() ) ?></h1>
-                    <h3><?php _e( 'You are not authorised to manage these settings. Please contact your WordPress administrator.', 'wpforms-cpt' ) ?></h3>
-                </div>
-            </div>
-            <?php
+            $html .= '<h3>' . _e( 'You are not authorised to manage these settings. Please contact your WordPress administrator.', 'wpforms-cpt' ) . '</h3>';
         }
+        $html .= '</div></div>';
+        return $html;
     }
 
     /**

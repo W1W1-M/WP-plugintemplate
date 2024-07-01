@@ -3,7 +3,7 @@
 wp_plugintemplate_uninstall();
 
 /**
- * @since 1.0.1
+ * @since 1.0.0
  *
  * @return void
  */
