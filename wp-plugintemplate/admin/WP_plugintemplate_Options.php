@@ -44,16 +44,16 @@ class WP_plugintemplate_Options {
      *@since 1.0.0
      *
      */
-    public function setup_page(): string {
-	    $html = '<div class="wrap"><div class="">';
+    public function setup_page(): void {
+	    $html = '<div class="wrap">';
 	    $html .= '<h1>' . esc_html( get_admin_page_title() ) . '</h1>';
+		echo $html;
         if ( current_user_can( 'manage_options' ) ) {
             $this->setup_settings_form();
         } else {
-            $html .= '<h3>' . _e( 'You are not authorised to manage these settings. Please contact your WordPress administrator.', 'wpforms-cpt' ) . '</h3>';
+            echo '<h2>' . _e( 'You are not authorised to manage these settings. Please contact your WordPress administrator.', 'wpforms-cpt' ) . '</h2>';
         }
-        $html .= '</div></div>';
-        return $html;
+        echo '</div>';
     }
 
     /**
