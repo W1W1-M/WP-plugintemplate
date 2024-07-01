@@ -40,21 +40,21 @@ class WP_plugintemplate_Options {
     }
 
     /**
-     * @return string
-     *@since 1.0.0
+     * @since 1.0.0
      *
+     * @return void
      */
-    public function setup_page(): void {
-	    $html = '<div class="wrap">';
-	    $html .= '<h1>' . esc_html( get_admin_page_title() ) . '</h1>';
+	public function setup_page(): void {
+		$html = '<div class="wrap">';
+		$html .= '<h1>' . esc_html( get_admin_page_title() ) . '</h1>';
 		echo $html;
-        if ( current_user_can( 'manage_options' ) ) {
-            $this->setup_settings_form();
-        } else {
-            echo '<h2>' . _e( 'You are not authorised to manage these settings. Please contact your WordPress administrator.', 'wpforms-cpt' ) . '</h2>';
-        }
-        echo '</div>';
-    }
+		if ( current_user_can( 'manage_options' ) ) {
+			$this->setup_settings_form();
+		} else {
+			echo '<h2>' . _e( 'You are not authorised to manage these settings. Please contact your WordPress administrator.', 'wpforms-cpt' ) . '</h2>';
+		}
+		echo '</div>';
+	}
 
     /**
      * @since 1.0.0

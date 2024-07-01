@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-plugintemplate\n"
-"POT-Creation-Date: 2023-07-05 14:21+0200\n"
-"PO-Revision-Date: 2023-07-05 14:23+0200\n"
+"POT-Creation-Date: 2024-07-01 12:31+0200\n"
+"PO-Revision-Date: 2024-07-01 12:31+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -15,19 +15,19 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/WP_plugintemplate_Options.php:62
+#: admin/WP_plugintemplate_Options.php:54
 msgid ""
 "You are not authorised to manage these settings. Please contact your "
 "WordPress administrator."
 msgstr ""
-"Vous n'êtes pas autorisé a gérer ces paramètres. Merci de contacter "
-"votre administrateur WordPress."
+"Vous n'êtes pas autorisé a gérer ces paramètres. Merci de contacter votre "
+"administrateur WordPress."
 
-#: admin/WP_plugintemplate_Options.php:102
-#: admin/WP_plugintemplate_Options.php:189
+#: admin/WP_plugintemplate_Options.php:92
+#: admin/WP_plugintemplate_Options.php:179
 msgid "Settings"
 msgstr "Paramètres"
 
-#: admin/WP_plugintemplate_Options.php:133
+#: admin/WP_plugintemplate_Options.php:123
 msgid "Dummy setting"
 msgstr "Paramètre factice"
