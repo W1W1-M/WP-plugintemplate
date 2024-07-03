@@ -86,6 +86,8 @@ class WP_plugintemplate_Setup {
 	protected function actions(): void {
 		try {
 			add_action( 'init', array( $this, 'load_textdomain' ), 10, 0 );
+			add_action( 'add_option_wp_tarteaucitron_dummy', array( $this, 'option_changed' ) );
+			add_action( 'update_option_wp_tarteaucitron_dummy', array( $this, 'option_changed' ) );
 		} catch ( Exception $exception ) {
 			error_log( 'WP-plugintemplate actions error' );
 			throw $exception;
@@ -99,6 +101,15 @@ class WP_plugintemplate_Setup {
 	 */
 	public function load_textdomain(): void {
 		load_plugin_textdomain( 'wp-plugintemplate', false, dirname( plugin_basename( WP_PLUGINTEMPLATE_PLUGIN_FILE_PATH ) ) . '/lang/' );
+	}
+
+	/**
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	public function option_changed(): void {
+
 	}
 
 }
