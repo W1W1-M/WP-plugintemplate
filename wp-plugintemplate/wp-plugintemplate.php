@@ -1,4 +1,17 @@
-<?php /** @noinspection PhpRedundantClosingTagInspection */
+<?php
+declare( strict_types=1 );
+
+/*
+ * This file is part of WP-tarteaucitron.
+ *
+ * WP-tarteaucitron is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ * WP-tarteaucitron is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with Foobar. If not, see <https://www.gnu.org/licenses/>.
+ */
 
 /**
  * WP-plugintemplate
@@ -34,15 +47,15 @@ wp_plugintemplate_setup();
  * @return void
  */
 function wp_plugintemplate_setup(): void {
-    try {
-        wp_plugintemplate_require_once();
-        $wp_plugintemplate_setup = new WP_plugintemplate_Setup();
-        $wp_plugintemplate_setup->init();
-        $wp_plugintemplate_options = new WP_plugintemplate_Options();
-        $wp_plugintemplate_options->init();
-    } catch ( Exception $exception ) {
-        exit( $exception->getMessage() );
-    }
+	try {
+		wp_plugintemplate_require_once();
+		$wp_plugintemplate_setup = new WP_plugintemplate_Setup();
+		$wp_plugintemplate_setup->init();
+		$wp_plugintemplate_options = new WP_plugintemplate_Options();
+		$wp_plugintemplate_options->init();
+	} catch ( Exception $exception ) {
+		exit( $exception->getMessage() );
+	}
 }
 
 /**
@@ -51,9 +64,9 @@ function wp_plugintemplate_setup(): void {
  * @return void
  */
 function wp_plugintemplate_require_once(): void {
-    $plugin_dir_path = plugin_dir_path( WP_PLUGINTEMPLATE_PLUGIN_FILE_PATH );
-    require_once $plugin_dir_path . 'inc/WP_plugintemplate_Setup.php';
-    require_once $plugin_dir_path . 'admin/WP_plugintemplate_Options.php';
+	$plugin_dir_path = plugin_dir_path( WP_PLUGINTEMPLATE_PLUGIN_FILE_PATH );
+	require_once $plugin_dir_path . 'inc/WP_plugintemplate_Setup.php';
+	require_once $plugin_dir_path . 'admin/WP_plugintemplate_Options.php';
+	require_once $plugin_dir_path . 'admin/WP_plugintemplate_Option.php';
+	require_once $plugin_dir_path . 'admin/WP_plugintemplate_Dummy_Option.php';
 }
-
-?>
